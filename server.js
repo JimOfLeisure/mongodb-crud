@@ -13,7 +13,11 @@ MongoClient.connect(`mongodb+srv://pawn:${encodeURIComponent(process.env.MONGOPW
     app.use(bodyParser.urlencoded({ extended: true }));
 
     app.get('/', (req, res) => {
-        res.sendFile(__dirname + '/index.html');
+        // res.sendFile(__dirname + '/index.html');
+        const cursor = quotesCollection.find().toArray()
+            .then(results => {
+                console.log(results);
+            });
     })
 
     app.post('/quotes', (req, res) => {
