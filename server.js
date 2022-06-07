@@ -10,6 +10,7 @@ MongoClient.connect(`mongodb+srv://pawn:${encodeURIComponent(process.env.MONGOPW
     const db = client.db('star-wars-quotes');
     const quotesCollection = db.collection('quotes');
 
+    app.set('view-engine', 'ejs');
     app.use(bodyParser.urlencoded({ extended: true }));
 
     app.get('/', (req, res) => {
@@ -17,6 +18,7 @@ MongoClient.connect(`mongodb+srv://pawn:${encodeURIComponent(process.env.MONGOPW
         const cursor = quotesCollection.find().toArray()
             .then(results => {
                 console.log(results);
+                res.render('index.ejs', { quotes: results });
             });
     })
 
