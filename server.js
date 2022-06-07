@@ -12,6 +12,8 @@ MongoClient.connect(`mongodb+srv://pawn:${encodeURIComponent(process.env.MONGOPW
 
     app.set('view-engine', 'ejs');
     app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.json());
+    app.use(express.static('public'));
 
     app.get('/', (req, res) => {
         // res.sendFile(__dirname + '/index.html');
@@ -28,6 +30,10 @@ MongoClient.connect(`mongodb+srv://pawn:${encodeURIComponent(process.env.MONGOPW
                 res.redirect('/');
             })
             .catch(err => console.error(err));
+    });
+
+    app.put('/quotes', (req, res) => {
+        console.log(req.body);
     });
 
     app.listen(PORT, () => {
