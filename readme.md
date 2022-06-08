@@ -23,6 +23,7 @@ It could use some `console.log()` cleanup, and I don't like the fact that update
 - MongoDB Atlas is fine
 - Apparently *both* `'view-engine'` *and* `'view engine'` are equivalent and valid settings for `app.set()` ?!
 - 'Whitelisting' Heroku free-plan IPs for MongoDB Atlas is rather wide-open
+- Extra work: How to make a custom 404 page for Express
 
 ## Examples:
 
