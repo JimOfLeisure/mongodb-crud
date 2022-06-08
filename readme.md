@@ -4,7 +4,7 @@ This is an implementation of https://zellwk.com/blog/crud-express-mongodb/ done 
 
 **Link to project:** https://mighty-lake-89044.herokuapp.com/
 
-![alt tag](http://placecorgi.com/1200/650)
+![a random corgi dog photo](http://placecorgi.com/1200/650)
 
 ## How It's Made:
 
