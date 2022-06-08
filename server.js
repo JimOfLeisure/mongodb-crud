@@ -33,7 +33,22 @@ MongoClient.connect(`mongodb+srv://pawn:${encodeURIComponent(process.env.MONGOPW
     });
 
     app.put('/quotes', (req, res) => {
-        console.log(req.body);
+        quotesCollection.findOneAndUpdate(
+            { name: 'Yoda' },
+            {
+                $set: {
+                    name: req.body.name,
+                    quote: req.body.quote,
+                }
+            },
+            {
+                upsert: true,
+            }
+        )
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => { console.error(err) });
     });
 
     app.listen(PORT, () => {
