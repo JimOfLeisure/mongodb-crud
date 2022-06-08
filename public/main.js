@@ -13,4 +13,11 @@ update.addEventListener('click', _event => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(upsertData),
     })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            window.location.reload();
+        })
+        .catch(err => console.error(err))
+        ;
 });

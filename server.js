@@ -45,8 +45,8 @@ MongoClient.connect(`mongodb+srv://pawn:${encodeURIComponent(process.env.MONGOPW
                 upsert: true,
             }
         )
-            .then(res => {
-                console.log(res);
+            .then(dbRes => {
+                res.json({ result: 'Success' });
             })
             .catch(err => { console.error(err) });
     });
