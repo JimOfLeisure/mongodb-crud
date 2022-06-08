@@ -51,6 +51,13 @@ MongoClient.connect(`mongodb+srv://pawn:${encodeURIComponent(process.env.MONGOPW
             .catch(err => { console.error(err) });
     });
 
+    app.delete('/quotes', (req, res) => {
+        quotesCollection.findOneAndDelete({ name: req.body.name })
+            .then(dbRes => {
+                res.json({ result: 'Success' });
+            })
+            .catch(err => { console.error(err) });
+    });
     app.listen(PORT, () => {
         console.log(`listening on port ${PORT}`);
     })
