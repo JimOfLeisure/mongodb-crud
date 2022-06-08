@@ -15,6 +15,8 @@ I have my own MongoDB servers but finally decided to kick the tires on MongoDB A
 
 I did some minor style optimizations like destructuring the `MongoClient` `require` statement and shortcut `req` and `res` like the cool kids. I also spelled Darth Vader's name correctly in the 50 plaecs it's in the code.
 
+It could use some `console.log()` cleanup, and I don't like the fact that update and delete aren't idempotent so I would fix that if I were to continue on this project.
+
 ## Lessons Learned:
 
 - MongoDB Atlas is fine
